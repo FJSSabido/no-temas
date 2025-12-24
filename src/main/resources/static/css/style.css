@@ -1,0 +1,379 @@
+/* Reset básico */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+                 Roboto, Helvetica, Arial, sans-serif;
+    background-color: #f4f6f8;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* Contenedor principal */
+.container {
+    max-width: 900px;
+    margin: 40px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Títulos */
+h1, h2 {
+    color: #2c3e50;
+    text-align: center;
+}
+
+/* Formulario */
+form {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+input[type="text"] {
+    width: 250px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #3498db;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+/* Resultados */
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    padding: 15px;
+    margin-bottom: 12px;
+    border-bottom: 1px solid #eee;
+}
+
+/* Libro y referencia */
+.versiculo-ref {
+    font-weight: bold;
+    color: #34495e;
+}
+
+/* Texto */
+.versiculo-texto {
+    display: block;
+    margin-top: 5px;
+    line-height: 1.5;
+}
+
+/* Resaltado */
+mark {
+    background-color: #ffeaa7;
+    padding: 2px 4px;
+    border-radius: 3px;
+}
+
+/* Paginación */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.pagination a {
+    text-decoration: none;
+    color: #3498db;
+    font-weight: bold;
+}
+
+.pagination a:hover {
+    text-decoration: underline;
+}
+
+/* Mensajes */
+.info {
+    text-align: center;
+    color: #7f8c8d;
+    margin-top: 20px;
+}
+.versiculo-card {
+    padding: 16px;
+    margin-bottom: 16px;
+    border-radius: 10px;
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    cursor: pointer;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.versiculo-card:active {
+    transform: scale(0.98);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+}
+
+.versiculo-card:hover {
+    background-color: #f8f9fa;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.versiculo-ref {
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 5px;
+}
+
+.versiculo-texto {
+    color: #333;
+    line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+
+    /* Contenedor */
+    .container {
+        margin: 8px;
+        padding: 16px;
+    }
+
+    /* Títulos */
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.3rem;
+    }
+
+    /* Formulario */
+    form {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    input[type="text"] {
+        width: 100%;
+        font-size: 18px;
+        padding: 12px;
+    }
+
+    button {
+        width: 100%;
+        font-size: 18px;
+        padding: 12px;
+    }
+
+    /* Versículos */
+    .versiculo-ref {
+        font-size: 0.95rem;
+    }
+
+    .versiculo-texto {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+
+    /* Paginación */
+    .pagination {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .pagination a {
+        font-size: 1rem;
+    }
+}
+.versiculo {
+    padding: 8px 0;
+}
+
+.versiculo-destacado {
+    background-color: #fff3b0;
+    padding: 10px;
+    border-radius: 6px;
+    margin: 10px 0;
+    transition: background-color 0.6s ease;
+}
+
+
+.search-form {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.search-bottom {
+    margin-top: 30px;
+}
+
+@media (max-width: 768px) {
+    .search-form {
+        flex-direction: column;
+    }
+}
+.sticky-search {
+    position: sticky;
+    top: 0;
+    background-color: #ffffff;
+    z-index: 100;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+@media (prefers-color-scheme: dark) {
+
+    body {
+        background-color: #2b2b2b;   /* gris oscuro, no negro */
+        color: #e0e0e0;
+    }
+
+    .container {
+        background-color: #3a3a3a;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    }
+
+    .sticky-search {
+        background-color: #3a3a3a;
+        border-bottom: 1px solid #555;
+    }
+
+    /* Tarjetas de versículos */
+    .versiculo-card {
+        background-color: #424242;
+        border: 1px solid #555;
+    }
+
+    .versiculo-card:hover {
+        background-color: #4a4a4a;
+    }
+
+    .versiculo-ref {
+        color: #ffffff;
+    }
+
+    .versiculo-texto {
+        color: #dddddd;
+    }
+
+    /* Inputs */
+    input[type="text"] {
+        background-color: #2f2f2f;
+        color: #ffffff;
+        border: 1px solid #666;
+    }
+
+    input[type="text"]::placeholder {
+        color: #aaaaaa;
+    }
+
+    /* Botón */
+    button {
+        background-color: #4da3ff;
+        color: #ffffff;
+    }
+
+    button:hover {
+        background-color: #3b8ddb;
+    }
+
+    /* Resaltado de palabra */
+    mark {
+        background-color: #b59f00;
+        color: #1f1f1f;
+        padding: 2px 4px;
+        border-radius: 3px;
+    }
+
+    /* Contadores y textos secundarios */
+    .result-count,
+    .info {
+        color: #bbbbbb;
+    }
+
+    /* Encabezado principal */
+    h1 {
+        color: #ffffff;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+    }
+
+    /* Caja clara para resultados */
+    .result-header {
+        background-color: #f2f2f2;
+        color: #1f1f1f;
+        padding: 14px 18px;
+        border-radius: 8px;
+        margin: 20px 0 25px 0;
+        font-weight: 600;
+        text-align: center;
+        line-height: 1.6;
+    }
+
+    .result-header span {
+        color: #1f1f1f;
+    }
+
+    /* Contador más sutil */
+    .result-count {
+        font-weight: 500;
+        color: #444444;
+        margin-left: 6px;
+        font-size: 0.9rem;
+    }
+}
+.result-count {
+    font-size: 0.9rem;
+    color: #666;
+    font-weight: normal;
+}
+@media (prefers-color-scheme: dark) and (max-width: 768px) {
+    .result-header {
+        font-size: 1rem;
+        padding: 12px;
+    }
+}
+.result-header {
+    background-color: #ffffff;
+    color: #222;
+    padding: 16px 18px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+/* 🔑 AQUÍ ESTÁ LA CLAVE */
+.result-count {
+    display: block;        /* fuerza salto de línea */
+    margin-top: 8px;       /* separación vertical real */
+    font-size: 0.95rem;
+    color: #444;
+}
+@media (max-width: 600px) {
+    .result-header {
+        font-size: 1.05rem;
+    }
+
+    .result-count {
+        margin-top: 12px;
+        font-size: 0.9rem;
+    }
+}
+.versiculo-texto {
+    white-space: pre-line;
+}
+
+
+
+

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<div class="container">
+<h1>Buscador Bíblico</h1>
+    <h2 class="result-header">
+        Resultados para "<span th:text="${palabra}"></span>"
+        <span class="result-count">
+        (<span th:text="${totalResultados}"></span> encontrados)
+    </span>
+    </h2>
+
+
+    <div class="sticky-search">
+        <form action="/buscar" method="get" class="search-form">
+            <input type="text"
+                   name="palabra"
+                   th:value="${palabra}"
+                   placeholder="Introduce una palabra"
+                   required>
+            <button type="submit">Buscar</button>
+        </form>
+    </div>
+
+
+    <p class="info" th:if="${#lists.isEmpty(resultados)}">
+        No se encontraron resultados.
+    </p>
+
+    <ul>
+        <li th:each="v : ${resultados}">
+            <div class="versiculo-card"
+                 th:onclick="'window.open(\'/libro/' + ${v.numeroLibro} +
+                 '#v-' + ${v.capitulo} + '-' + ${v.versiculo} + '\')'">
+
+                <div class="versiculo-ref"
+                     th:text="${v.libro + ' ' + v.capitulo + ':' + v.versiculo}">
+                </div>
+
+                <div class="versiculo-texto"
+                     th:utext="${v.textoResaltado}">
+                </div>
+            </div>
+<!--            <span class="versiculo-ref"
+                  th:text="${v.libro + ' ' + v.capitulo + ':' + v.versiculo}">
+            </span>
+
+            <span class="versiculo-texto"
+                  th:utext="${v.textoResaltado}">
+            </span>-->
+        </li>
+    </ul>
+
+    <div class="pagination">
+        <a th:if="${page > 0}"
+           th:href="@{/buscar(palabra=${palabra}, page=${page - 1})}">
+            ⬅ Anterior
+        </a>
+
+        <span>
+            Página <span th:text="${page + 1}"></span>
+            de <span th:text="${totalPaginas}"></span>
+        </span>
+
+        <a th:if="${page + 1 < totalPaginas}"
+           th:href="@{/buscar(palabra=${palabra}, page=${page + 1})}">
+            Siguiente ➡
+        </a>
+    </div>
+
+</div>
+
+
+</body>
+</html>

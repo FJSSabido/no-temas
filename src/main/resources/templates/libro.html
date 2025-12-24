@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="${libro}"></title>
+    <link rel="stylesheet" href="/css/style.css">
+
+    <style>
+        .versiculo {
+            margin-bottom: 8px;
+        }
+
+        .versiculo-destacado {
+            background-color: #fff3b0;
+            padding: 4px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<script>
+    const id = window.location.hash.substring(1);
+
+    if (id) {
+        const el = document.getElementById(id);
+
+        if (el) {
+            // Resaltar versículo
+            el.classList.add("versiculo-destacado");
+
+            // Scroll suave
+            el.scrollIntoView({
+                behavior: "smooth",
+                block: "center"
+            });
+
+            // ⏳ Quitar resaltado tras 3 segundos
+            setTimeout(() => {
+                el.classList.remove("versiculo-destacado");
+            }, 3000);
+        }
+    }
+</script>
+
+<body>
+
+<div class="container">
+    <h1 th:text="${libro}"></h1>
+
+    <div th:each="v : ${versiculos}"
+         th:id="'v-' + ${v.capitulo} + '-' + ${v.versiculo}"
+         class="versiculo">
+
+        <span class="versiculo-ref"
+              th:text="${v.capitulo + ':' + v.versiculo}">
+        </span>
+
+        <span class="versiculo-texto"
+              th:text="${v.texto}">
+        </span>
+    </div>
+
+</div>
+
+<script>
+    // Resalta el versículo si hay hash (#v-x-y)
+    const id = window.location.hash.substring(1);
+    if (id) {
+        const el = document.getElementById(id);
+        if (el) {
+            el.classList.add("versiculo-destacado");
+            el.scrollIntoView({ behavior: "smooth", block: "center" });
+        }
+    }
+</script>
+
+</body>
+</html>
