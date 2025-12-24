@@ -2,7 +2,7 @@
   "name": "No Temas",
   "short_name": "NoTemas",
   "description": "Buscador bíblico Reina-Valera",
-  "start_url": "/",
+  "start_url": "/?source=pwa",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#3498db",
