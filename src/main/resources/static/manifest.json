@@ -9,12 +9,12 @@
   "theme_color": "#3498db",
   "icons": [
     {
-      "src": "/icons/icon-192.png",
+      "src": "/icons/cruz-2d.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "/icons/icon-512.png",
+      "src": "/icons/cruz-3d.png",
       "sizes": "512x512",
       "type": "image/png"
     }
