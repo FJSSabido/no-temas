@@ -1,22 +1,40 @@
 {
-  "name": "No Temas",
+  "name": "No Temas — Buscador Bíblico",
   "short_name": "NoTemas",
-  "description": "Buscador bíblico Reina-Valera",
-  "start_url": "/?pwa=true",
+  "description": "Buscador bíblico Reina-Valera para lectura y estudio",
+  "lang": "es-ES",
+  "start_url": "/?source=pwa",
   "scope": "/",
   "display": "standalone",
+  "display_override": ["standalone", "browser"],
+  "orientation": "portrait",
   "background_color": "#ffffff",
   "theme_color": "#3498db",
+  "categories": ["books", "education", "reference"],
   "icons": [
     {
-      "src": "/icons/cruz-2d.png",
+      "src": "/icons/icon-192.png",
       "sizes": "192x192",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any"
     },
     {
-      "src": "/icons/cruz-3d.png",
+      "src": "/icons/icon-192-maskable.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/icons/icon-512.png",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-512-maskable.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
     }
   ]
 }
